@@ -2,14 +2,18 @@
 <html>
 <head>
   <title>Meatandmead</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
+  <%= render('layouts/navbar') %>
+<div id="landing-content">
+    <section class="slider">
+        <!-- <img src="http://xanderbennett.com/wp-content/uploads/2014/05/game-of-thrones-up-net-map-westeros-1214206.jpg"></img> -->
 
-<%= render('layouts/navbar') %>
 
   <div class="container">
     <p class="notice"><%= flash[:notice] %></p>
@@ -19,7 +23,8 @@
   <div class="container">
     <%= yield %>
   </div>
-
+</section>
+    </div>
 </body>
 
 </html>
