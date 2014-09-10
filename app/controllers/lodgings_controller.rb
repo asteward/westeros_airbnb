@@ -45,6 +45,6 @@ private
   end
 
   def all_lodgings
-    @lodgings = Lodgings.all
+    @lodgings = Lodging.all
   end
 end
