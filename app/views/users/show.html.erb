@@ -1,0 +1,19 @@
+<h1><%= @user.email %></h1>
+
+
+<div id="new_lodging_form">
+  <div id="add_lodging_btn">
+    <%= link_to "Add Lodging", new_user_lodging_path(current_user), class: "btn btn-success", id: "add_lodging_btn_a", remote: true %>
+  </div>
+</div>
+
+<div id="user_lodging_list">
+
+  <h2><%= @user.email %> is Currently Hosting At:</h2>
+  <ul>
+    <% @user.lodgings.each do |lodging| %>
+      <li><%= link_to lodging.name, user_lodging_path(@user, lodging) %> at <%= lodging.location %></li>
+    <% end %>
+
+  </ul>
+</div>
