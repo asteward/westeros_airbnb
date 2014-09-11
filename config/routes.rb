@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'application#index'
+
   devise_for :users
 
   resources :users do
@@ -11,6 +13,6 @@ Rails.application.routes.draw do
     resources :locations, only: :index
   end
 
-
-  root to: 'application#index'
+  match('/search', { :via => :get, :to => 'lodgings#search' } )
+  match('/legal', {:via => :get, :to => 'application#legal' } )
 end

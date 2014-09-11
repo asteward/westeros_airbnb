@@ -21,6 +21,7 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'devise'
+gem 'textacular', '~> 3.0'
 
 group :test, :development do
   gem 'better_errors'

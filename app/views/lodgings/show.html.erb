@@ -7,7 +7,11 @@
   <p><blockquote><%= @lodging.marketing_text %></blockquote></p>
 
   <div id="bookings-form">
-    <p><%= link_to "BOOK A ROOM", new_lodging_booking_path(@lodging), remote: true, class: "btn btn-success" %></p>
+    <% if current_user %>
+      <p><%= link_to "BOOK A ROOM", new_lodging_booking_path(@lodging), remote: true, class: "btn btn-success" %></p>
+    <% else %>
+      <p><%= link_to "LOG IN TO BOOK A ROOM", new_user_session_path, class: "btn btn-success" %></p>
+    <% end %>
   </div>
 </div>
 

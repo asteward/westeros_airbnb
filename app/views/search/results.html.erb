@@ -1,0 +1,10 @@
+<div class = "form-background">
+  <h1>Search results for: <%= @search_text %></h1>
+
+  <ul>
+    <% @search_results.order(:location).each do |result| %>
+      <li> <%= result.location %> - <%= link_to result.name, user_lodging_path(User.find(result.user_id), result) %> Cost Per Night: $ <%= result.cost %> </li>
+    <% end %>
+  </ul>
+
+</div>

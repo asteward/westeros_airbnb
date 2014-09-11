@@ -37,6 +37,11 @@ class LodgingsController < ApplicationController
 
   end
 
+  def search
+    @search_text = params[:search_term]
+    @search_results = Lodging.basic_search(@search_text)
+    render('search/results.html.erb')
+  end
 
 private
 

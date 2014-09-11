@@ -11,10 +11,6 @@
 <body>
   <%= render('layouts/navbar') %>
 <div id="landing-content">
-    <section class="slider">
-        <!-- <img src="http://xanderbennett.com/wp-content/uploads/2014/05/game-of-thrones-up-net-map-westeros-1214206.jpg"></img> -->
-
-
   <div class="container">
     <p class="notice"><%= flash[:notice] %></p>
     <p class="alert"><%= flash[:alert] %></p>
@@ -23,8 +19,16 @@
   <div class="container">
     <%= yield %>
   </div>
-</section>
-    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container form-background">
+    <p class="text-muted">All hosts extend and must abide by the ancient tradition of <%= link_to "Guest Right", "/legal" %></p>
+  </div>
+</div>
+
+
 </body>
 
 </html>
