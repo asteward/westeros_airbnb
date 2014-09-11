@@ -1,0 +1,10 @@
+<div class="form-background">
+
+  <h1>Visit <%= @lodgings[0].location %>!</h1>
+  <ul>
+    <% @lodgings.each do |location| %>
+      <li><%= link_to location.name, user_lodging_path(User.find(location.user_id), location) %></li>
+    <% end %>
+  </ul>
+
+</div>

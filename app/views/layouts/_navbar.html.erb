@@ -35,8 +35,13 @@
                 <ul role="menu" class="dropdown-menu">
                     <li><%= link_to "Available Lodging", lodgings_path %></li>
                     <li class="divider"></li>
-                    <% Lodging.all.uniq.order(:location).each do |lodging| %>
-                        <li><%= link_to lodging.location, user_lodging_path(User.find(lodging.user_id), lodging) %></li>
+                    <% lodgings = Lodging.all %>
+                    <% unique_lodgings = []  %>
+                    <% lodgings.each_with_index do |lodge, index|   %>
+                        <% unique_lodgings << lodge unless lodgings.slice(0, index).include?(lodge.name) || index == 0  %>
+                    <% end %>
+                    <% unique_lodgings.each do |location| %>
+                        <li><%= link_to location.location, lodging_locations_path(location) %></li>
                     <% end %>
                 </ul>
             </li>

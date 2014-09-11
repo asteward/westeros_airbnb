@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :lodgings, only: :index do
     resources :bookings, only: [:new, :create]
+    resources :locations, only: :index
   end
 
 
