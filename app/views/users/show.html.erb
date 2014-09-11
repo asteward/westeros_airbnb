@@ -8,6 +8,12 @@
     </div>
   </div>
 
+  <div id = "user-bio">
+    <% if @user.bio %>
+      <blockquote><%= @user.bio %></blockquote>
+    <% end %>
+  </div>
+
   <div id="user_lodging_list">
 
     <h2><%= @user.email %> is Currently Hosting At:</h2>

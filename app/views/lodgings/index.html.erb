@@ -2,8 +2,8 @@
   <h1>All Lodging Opportunities For Weary Travelers in Need of Mead & Ale</h1>
 
   <ul>
-    <% @lodgings.each do |lodging| %>
-      <li><%= link_to "#{lodging.name} at #{lodging.location}", user_lodging_path(User.find(lodging.user_id), lodging)  %></li>
+    <% @lodgings.order(:location).each do |lodging| %>
+      <li><%= link_to "#{lodging.location}: #{lodging.name}", user_lodging_path(User.find(lodging.user_id), lodging)  %></li>
     <% end %>
   </ul>
 </div>
