@@ -1,12 +1,14 @@
-<h1 id="home-title">WELCOME TO WESTEROS</h1>
+<div class="no-background">
+  <h1 id="home-title">WELCOME TO WESTEROS</h1>
 
-<% if !current_user %>
-  <%= link_to "Take the <strong style='color: black;'>Black</strong>, TODAY!".html_safe, new_user_registration_path, class: "btn btn-danger btn-lg" %>
-<% end %>
-<script>
-  $('#landing-content').mousemove(function(e){
-    var amountMovedX = (e.pageX * -1 / 60);
-    var amountMovedY = (e.pageY * -1 / 60);
-    $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
-  });
-</script>
+  <% if !current_user %>
+    <%= link_to "Take the <strong style='color: black;'>Black</strong>, TODAY!".html_safe, new_user_registration_path, class: "btn btn-danger btn-lg" %>
+  <% end %>
+  <script>
+    $('#landing-content').mousemove(function(e){
+      var amountMovedX = (e.pageX * -1 / 60);
+      var amountMovedY = (e.pageY * -1 / 60);
+      $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
+    });
+  </script>
+</div>

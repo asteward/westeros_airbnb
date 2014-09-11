@@ -32,10 +32,25 @@ html, body {
   color: white;
 }
 
+.btn {
+  margin-top: 5px;
+}
+
 .btn-lg {
   min-width: 100%;
   font-size: 500%;
   opacity: 0.8;
+}
+
+.form-background {
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.no-background {
+  background: none;
 }
 
 #landing-content {
