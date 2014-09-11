@@ -18,14 +18,14 @@
                 <b class="caret"></b></a>
                 <ul role="menu" class="dropdown-menu">
                     <% if !current_user %>
-                        <li><%= link_to 'Swear Fealty', new_user_registration_path %></li>
-                        <li><%= link_to 'Do Your Duty', new_user_session_path %></li>
-                        <li><%= link_to 'Too much mead?', new_user_password_path %></li>
+                        <li><%= link_to '[REGISTER] Swear Fealty', new_user_registration_path %></li>
+                        <li><%= link_to '[LOGIN] Do Your Duty', new_user_session_path %></li>
+                        <li><%= link_to '[FORGOT PW] Too much mead?', new_user_password_path %></li>
                     <% else %>
-                        <li><%= link_to "Your Virtual Castle", user_lodgings_path(current_user) %></li>
-                        <li><%= link_to 'Change Your Face', edit_user_registration_path %></li>
+                        <li><%= link_to "[USER SHOW] Your Virtual Castle", user_path(current_user) %></li>
+                        <li><%= link_to '[EDIT] Change Your Face', edit_user_registration_path %></li>
                         <li class="divider"></li>
-                        <li><%= link_to 'Take the Black', destroy_user_session_path, method: :delete %></li>
+                        <li><%= link_to '[LOGOUT] Take the Black', destroy_user_session_path, method: :delete %></li>
                     <% end %>
                     <li class="divider"></li>
                 </ul>
@@ -33,7 +33,7 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">DESTINATIONS <b class="caret"></b></a>
                 <ul role="menu" class="dropdown-menu">
-                    <li><%= link_to "Lodging", lodgings_path %></li>
+                    <li><%= link_to "Available Lodging", lodgings_path %></li>
                     <li class="divider"></li>
                 </ul>
             </li>

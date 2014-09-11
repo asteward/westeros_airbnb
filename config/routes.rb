@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users do
-    resources :lodgings, except: :index
+    resources :lodgings
     # resources :bookings, only: :index
   end
 
