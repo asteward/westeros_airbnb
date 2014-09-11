@@ -1,3 +1,4 @@
+
 <div class="form-background">
   <h1><%= @user.email %></h1>
 
@@ -22,5 +23,15 @@
         <li><%= link_to lodging.name, user_lodging_path(@user, lodging) %> at <%= lodging.location %></li>
       <% end %>
     </ul>
+  </div>
+
+  <% if current_user == @user %>
+    <h2>Your Vacations!</h2>
+    <div id="user_vacations">
+      <% @user.bookings.order(:start_date).each do |booking| %>
+        <li><%= booking.lodging.location + ", staying at " + booking.lodging.name + " from: " + booking.start_date.to_s + " to " + booking.end_date.to_s %></li>
+      <% end %>
+    </div>
+  <% end %>
   </div>
 </div>

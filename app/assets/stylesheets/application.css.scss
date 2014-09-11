@@ -19,6 +19,7 @@
 
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 /*body {
   background-image: url("westeros.jpg");
@@ -68,6 +69,22 @@ background-repeat: no-repeat;
 border-bottom: solid;
 border-bottom-color: #628027;
 border-bottom-width: 5px;
+}
+
+#user_vacations {
+  margin-left: 40px;
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  background: rgb(255, 255, 255);
+  background: rgba(190, 190, 190, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#user_vacations li {
+  margin-bottom: 10px;
+
 }
 
 

@@ -35,6 +35,9 @@
                 <ul role="menu" class="dropdown-menu">
                     <li><%= link_to "Available Lodging", lodgings_path %></li>
                     <li class="divider"></li>
+                    <% Lodging.all.uniq.order(:location).each do |lodging| %>
+                        <li><%= link_to lodging.location, user_lodging_path(User.find(lodging.user_id), lodging) %></li>
+                    <% end %>
                 </ul>
             </li>
         </ul>
