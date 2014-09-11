@@ -1,0 +1,3 @@
+$('#bookings-form').html('<p> <%= link_to "BOOK A ROOM", new_lodging_booking_path(@lodging), remote: true, class: "btn btn-success" %></p> <p>Succesfully booked <%= @booking.count_nights %> nights for $<%= @booking.bill %> </p>'
+);
+
